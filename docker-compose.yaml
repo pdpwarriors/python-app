@@ -1,0 +1,16 @@
+version: "2"
+services: 
+  redis: 
+    image: redis
+  web: 
+    build: "."
+    ports: 
+      - "5000:5000"
+    volumes: 
+      - ".:/code"
+  portainer:
+    image: portainer/portainer
+    ports:
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
