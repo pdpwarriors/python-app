@@ -1,7 +1,7 @@
 # Use an official Python runtime as a parent image
 FROM python:latest
 
-MAINTAINER MANIVANNAN.C
+MAINTAINER Suresh Mallela
 
 # Set the working directory to /app
 WORKDIR /app
@@ -17,9 +17,6 @@ RUN pip install -r requirements.txt
 
 # Make port 80 available to the world outside this container
 EXPOSE 5000
-
-# Define environment variable
-ENV NAME ITRAIN-PULSAR
 
 #When you launch the container, it runs the script and then exits
 ENTRYPOINT ["newrelic-admin", "run-program"]
